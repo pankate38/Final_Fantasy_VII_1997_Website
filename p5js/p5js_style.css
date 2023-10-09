@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(8, 28, 114);
+}
+
+canvas {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  text-align: center;
+}
+
+a{
+  color: white;
+  font-size: 25px;
+}
+.title{
+  color: white;
+}
+.midgarInfo{
+  color: white;
+  background-image: url("../media/images/midgar_bg.jpg");
+}
+.chocoboInfo{
+  background-image: url("../media/images/chocobo_bg.png");
+}
+.goldInfo{
+  color: white;
+  background-image: url("../media/images/gold_bg.webp");
+}
+.costaInfo{
+  background-image: url("../media/images/costa_bg.jpg");
+}
+.iceInfo{
+  background-image: url("../media/images/icy_bg.webp");
+}
+.wutaiInfo{
+  background-image: url("../media/images/wutai_bg.webp");
+}
