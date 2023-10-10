@@ -20,7 +20,7 @@ canvas {
   margin-left: auto;
   margin-right: auto;
 }
-.logo{
+#title{
   width: 220px;
   margin-top: -20px;
   margin-bottom: -60px;
@@ -134,7 +134,7 @@ img{
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 25px;
-  color: rgb(236, 209, 57);
+  color: rgb(62, 53, 3);
 }
 #chocoboIngo img{
   width: 2000px;
@@ -142,7 +142,7 @@ img{
 
 #goldInfo{
   padding-top: 30px;
-  color: rgb(223, 157, 33);
+  color: rgb(248, 225, 21);
   background-image: url("../media/images/gold_bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -164,6 +164,9 @@ img{
   background-size: cover;
   padding-bottom: 25px;
 }
+#costaInfo img{
+  width: 1200px;
+}
 #iceInfo{
   color: rgb(49, 57, 71);
   padding-top: 30px;
@@ -171,6 +174,9 @@ img{
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 25px;
+}
+#iceInfo img{
+  width: 1100px;
 }
 #wutaiInfo{
   color: rgb(89, 5, 4);

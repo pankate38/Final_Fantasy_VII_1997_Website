@@ -7,6 +7,20 @@ body{
     background-color: rgb(184, 183, 182);
 }
 
+h1{
+    font-family: FF7_font;
+    font-size: 75px;
+    text-align: center;
+    background-color: rgb(98, 98, 100);
+    padding: 15px;
+    color: white;
+}
+
+.company{
+    width: 200px;
+    margin: end;
+}
+
 .title{
     display: block;
     margin-left: auto;
@@ -15,6 +29,9 @@ body{
     margin-top: -100px;
 }
 
+a{
+    text-decoration: none;
+}
 .styleButton{
     font-family: FF7_font;
     display: inline;
@@ -46,8 +63,70 @@ body{
     text-align: center;
 }
 iframe{
-    padding-top: 50px;
+    padding-top: -10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.reviewSec{
+    text-align: center;
+}
+.reviewSec h2{
+    display: inline-block;
+    font-family: FF7_font;
+    font-size: 35px;
+    text-align: center;
+    background-color: rgb(51, 49, 49);
+    padding: 25px;
+    color: rgb(212, 208, 208);
+    border: rgb(224, 221, 221) ridge 8px;
+    border-radius: 10px;
+
+}
+#charSection{
+    font-family: FF7_font;
+    padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-image: linear-gradient(rgb(98, 98, 100), rgb(8, 8, 8));
+    border: rgb(224, 221, 221) ridge 8px;
+    border-radius: 10px;
+    color: white;
+}
+#charSection img{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+#charSection h2{
+    display: block;
+    text-align: center;
+    font-size: 65px;
+}
+
+#charSection p{
+    display: block;
+    font-size: 30px;
+    margin-left: 25%;
+    margin-right: 25%;
+   
+}
+
+#buySection a{
+    text-decoration: none;
+}
+#buySection button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: gray;
+    font-family: FF7_font;
+    background-image: linear-gradient(rgb(98, 98, 100), rgb(8, 8, 8));
+    color: white;
+    font-size: 50px;
+    padding: 10px;
+    border: rgb(224, 221, 221) ridge 8px;
+    border-radius: 10px;
+    text-align: center;
 }
