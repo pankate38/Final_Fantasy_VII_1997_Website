@@ -71,7 +71,7 @@ function setup() {
   midgarLink.position(-1, -1);
   chocoboLink = createA('#chocoboInfo', '__________');
   chocoboLink.position(-1, -1);
-  goldLink = createA('#goldInfo', '______________________');
+  goldLink = createA('#goldInfo', '____________________');
   goldLink.position(-1, -1);
   costaLink = createA('#costaInfo', '_____________');
   costaLink.position(-1, -1);
@@ -100,7 +100,7 @@ function draw() {
   image(mapImage, mapX, mapY, windowWidth, windowHeight);
   push();
     textFont(font);
-    textSize(10);
+    textSize(30);
     textAlign(CENTER, TOP);
     text("PRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
   pop();
@@ -110,15 +110,17 @@ function draw() {
   
     noFill();
     noStroke();
-    var rectX = windowWidth-775;
-    var rectY = windowHeight-390;
-    var rectWidth = windowWidth-1795;
-    var rectHeight = windowHeight-825;
+    
+    var rectX = canvasX+1080;
+    var rectY = canvasY+370;
+    var rectWidth = canvasWidth-1595;
+    var rectHeight = canvasHeight-625;
     rect(rectX, rectY, rectWidth, rectHeight);
     
     if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
+      
       midgarLink.show();
-      midgarLink.position(rectX+63, rectY+105);
+      midgarLink.position(rectX+50, rectY+180);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
@@ -134,21 +136,22 @@ function draw() {
       midgarLink.hide();      
     }
     
+
   pop();
 
   //CHOCOBO
   push();
     noFill();
     noStroke();
-    var rectX = windowWidth-390;
-    var rectY = windowHeight-300;
-    var rectWidth = windowWidth-1760;
-    var rectHeight = windowHeight-820;
+   var rectX = canvasX+1450;
+   var rectY = canvasY+420;
+    var rectWidth = canvasWidth-1595;
+    var rectHeight = canvasHeight-620;
     rect(rectX, rectY, rectWidth, rectHeight);
 
     if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
       chocoboLink.show();
-      chocoboLink.position(rectX+60, rectY+117);
+      chocoboLink.position(rectX+50, rectY+210);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
@@ -168,15 +171,17 @@ function draw() {
   //gold saucer
   push();
     noFill();
+   
     noStroke();
-    var rectX = windowWidth-1220;
-    var rectY = windowHeight-250;
-    var rectWidth = windowWidth-1695;
-    var rectHeight = windowHeight-825;
+
+var rectX = canvasX+750;
+var rectY = canvasY+620;
+ var rectWidth = canvasWidth-1595;
+ var rectHeight = canvasHeight-620;
     rect(rectX, rectY, rectWidth, rectHeight);
     if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
       goldLink.show();
-      goldLink.position(rectX+55, rectY+105);
+      goldLink.position(rectX-5, rectY+50);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
@@ -194,15 +199,16 @@ function draw() {
   //costa del sol
   push();
     noFill();
-    noStroke();
-    var rectX = windowWidth-1080;
-    var rectY = windowHeight-360;
-    var rectWidth = windowWidth-1780;
-    var rectHeight = windowHeight-820;
+  noStroke();
+ 
+  var rectX = canvasX+750;
+  var rectY = canvasY+420;
+   var rectWidth = canvasWidth-1595;
+   var rectHeight = canvasHeight-620;
     rect(rectX, rectY, rectWidth, rectHeight);
     if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
       costaLink.show();
-      costaLink.position(rectX+66, rectY+117);
+      costaLink.position(rectX+120, rectY+158);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
@@ -221,14 +227,15 @@ function draw() {
   push();
     noFill();
     noStroke();
-    var rectX = windowWidth-1300;
-    var rectY = windowHeight-560;
-    var rectWidth = windowWidth-1800;
-    var rectHeight = windowHeight-820;
+   
+    var rectX = canvasX+550;
+    var rectY = canvasY+220;
+     var rectWidth = canvasWidth-1595;
+     var rectHeight = canvasHeight-620;
     rect(rectX, rectY, rectWidth, rectHeight);
     if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
       iceLink.show();
-      iceLink.position(rectX+51, rectY+119);
+      iceLink.position(rectX+115, rectY+180);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
@@ -247,14 +254,15 @@ function draw() {
   push();
     noFill();
     noStroke();
-    var rectX = windowWidth-1790;
-    var rectY = windowHeight-500;
-    var rectWidth = windowWidth-1820;
-    var rectHeight = windowHeight-840;
+   
+    var rectX = canvasX+150;
+    var rectY = canvasY+300;
+     var rectWidth = canvasWidth-1595;
+     var rectHeight = canvasHeight-620;
     rect(rectX, rectY, rectWidth, rectHeight);
     if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
       wutaiLink.show();
-      wutaiLink.position(rectX+60, rectY+95);
+      wutaiLink.position(rectX+80, rectY+138);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
