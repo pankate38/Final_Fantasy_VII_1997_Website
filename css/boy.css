@@ -1,0 +1,35 @@
+@font-face{
+    font-family: FF7_font;
+    src: url("../media/font/Reactor7.ttf");
+}
+
+body{
+    background-color: rgb(66, 124, 112);
+}
+
+.title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+.styleButton{
+    font-family: FF7_font;
+    display: inline;
+    margin-right: 1000px;
+    background-image: linear-gradient(rgb(41, 185, 48), rgb(26, 32, 22));
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    border: rgb(224, 221, 221) ridge 8px;
+    border-radius: 10px;
+}
+
+iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 565px;
+}

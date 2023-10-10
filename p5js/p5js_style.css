@@ -12,6 +12,7 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: rgb(8, 28, 114);
+  background: url('../media/images/map_bg.webp');
 }
 
 canvas {
@@ -19,11 +20,34 @@ canvas {
   margin-left: auto;
   margin-right: auto;
 }
-h1{
+.logo{
+  width: 220px;
+  margin-top: -20px;
+  margin-bottom: -60px;
+}
+
+.title{
   display: block;
-  text-align: center;
-  font-size: 69px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('../media/images/map_bg.webp');
+  padding-left: 15px;
+  padding-right: 13px;
+  padding-top: 25px;
+  padding-bottom: 23px;
+}
+.title a{
+  display: inline;
+  margin-left: 47%;
+  font-family: FF7 textbox;
+  background-image: linear-gradient(rgb(179, 130, 71),rgb(56, 25, 6));
   color: white;
+  font-size: 40px;
+  padding: 10px;
+  border: rgb(224, 221, 221) ridge 8px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .names{
@@ -36,7 +60,18 @@ a{
   color: white;
   font-size: 25px;
 }
-
+.startText{
+  margin-left: 300px;
+  margin-right: 300px;
+  font-family: FF7 textbox;
+  font-size: 40px;
+  padding: 20px;
+  background-image: linear-gradient(rgb(9, 15, 191), rgb(24, 8, 104));
+  border: rgb(224, 221, 221) ridge 8px;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+}
 .infoText{
   font-family: FF7 textbox;
   font-size: 40px;
@@ -46,7 +81,10 @@ a{
   background-image: linear-gradient(rgb(9, 15, 191), rgb(24, 8, 104));
   border: rgb(224, 221, 221) ridge 8px;
   border-radius: 10px;
+  color: white;
 }
+
+
 audio{
   display: block;
   margin-left: auto;
@@ -69,7 +107,6 @@ button{
 
 button:hover{
   color: yellow;
-  
 }
 
 img{
@@ -80,7 +117,7 @@ img{
 }
 
 #midgarInfo{
-  padding-top: 30px;
+  padding-top: 20px;
   color: white;
   background: url("../media/images/midgar_bg.jpg");
   background-repeat: no-repeat;
@@ -113,6 +150,11 @@ img{
 }
 #goldInfo img{
   width: 1500px;
+}
+
+.costaLink{
+  font-size: 40px;
+  color: rgb(97, 208, 255);
 }
 #costaInfo{
   color: rgb(2, 54, 122);

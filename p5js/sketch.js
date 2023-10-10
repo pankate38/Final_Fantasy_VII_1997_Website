@@ -35,19 +35,19 @@ var canvasHeight;
 var canvasWidth;
 
 var clickCount = 1;
+var cursorImage;
 
+var font;
 
 function preload(){
-  mapImage = loadImage('../media/images/ffvii_map.jpg');
+  mapImage = loadImage('../media/images/ffvii_map_filter.jpg');
   mapSong = loadSound('../media/audio/25-Main Theme of Final Fantasy VII.mp3');
   mapSong.setVolume(0.03);
-  spriteImage = createImg('../media/images/cloud_sprite.png'); 
 
+  spriteImage = createImg('../media/images/cloud_sprite.png'); 
  
   clickSound = loadSound('../media/audio/clicking.mp3');
- 
   clickSound.setLoop(false);
-
   clickSound.setVolume(0.1);
 
   midgarSong = loadSound("../media/audio/05-Anxious Heart.mp3");
@@ -63,6 +63,7 @@ function preload(){
   wutaiSong = loadSound("../media/audio/55-Wutai.mp3");
   wutaiSong.setVolume(0.03);
 
+  font = loadFont('../media/font/Reactor7.ttf');
   
 }
 function setup() {
@@ -89,12 +90,20 @@ function setup() {
  // canvas.mouseClicked(playMapSong());
   canvas.parent('sketch-holder');
   mapSong.play();
+  
+ 
 }
 
 function draw() {
   background(220);
   
   image(mapImage, mapX, mapY, windowWidth, windowHeight);
+  push();
+    textFont(font);
+    textSize(50);
+    textAlign(CENTER, TOP);
+    text("PRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
+  pop();
   
   //midgar
   push();
@@ -118,6 +127,7 @@ function draw() {
         midgarSong.setLoop(false);
         midgarSong.play();
         mapSong.stop();
+        
       }
      // midgarSong.play();
       

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sketch</title>
+    <title>Final Fantasy VII Map</title>
 
     <link rel="stylesheet" type="text/css" href="p5js_style.css">
 
@@ -13,15 +13,20 @@
   </head>
 
   <body>
-    <h1 id = "title"> --------------------- M A P ----- O F ----- G A I A ---------------------</h1>
+    <img class = "logo" src = "../media/images/ffvii_logo.png">
+    <div class = "title"> 
+      <a href = "../index.html" class = "menuButton">Home</a> 
+    </div>
     <div id ="sketch-holder">
       <script src="sketch.js"></script>
     </div>
-    <br><br><br><br>
+    
     <div id = "midgarInfo">
       <p class = "names"> MIDGAR </p>
-      
-      <p class = "infoText">Midgar is the capital city and power base of the Shinra Electric Power Company in the world of Gaia. <br><br> 
+      <!-- source of information: https://finalfantasy.fandom.com/wiki -->
+      <p class = "startText"> Your journey starts here in the city of Midgar!<br> This is the capital city and power base of the Shinra Electric Power Company in the world of Gaia. </p> <br><br> 
+      <img src = "../media/images/cloud-stance.jpg">
+      <p class = "infoText"> 
         Midgar is the most technologically advanced city on the planet. Its large circular structure is supported 
         above the ground by eight mako reactors and a central pillar, with various other supports around the city. 
         On top of the structure lies the city proper, divided into eight sectors, while underneath it lie the slums 
@@ -32,20 +37,38 @@
         countryside, which has become a barren wasteland due to the city sapping the surrounding life energy. 
         Due to this, the city and its reactors are a prime target for terrorism/rebel groups like Avalanche who seek 
         to restore the planet to its former state and stop Shinra from sapping its life energy.<br></p>
-        <img src = "../media/images/cloud-stance.jpg">
+        
         <a href = "#title" onClick="window.location.reload()"> <button > Back to map? </button> </a>
     </div>
 
     <div id = "chocoboInfo">
       <p class = "names"> CHOCOBO FARM </p>
-      <img src = "../media/images/chocobo.webp">
+      <p class = "startText"> Right over to the East of Midgar is the Grasslands Area!<br> 
+        Here you'll find many wild monsters to fight but maybe riding a Chocobo will make it a bit easier. </p>
+        <img src = "../media/images/chocobo.webp">
+      <p class = "infoText"> The Grasslands begins where the extent of wasteland caused by Midgar's Mako extraction ends. 
+        Set up in the otherwise empty plains of the Grasslands Area is the Chocobo Farm owned by Choco Bill, who has made business out of running an inn and selling 
+        Chocobos and Chocobo Lure Materia to travelers trying to cross the marsh. <br> <br> The Chocobo Farm is located in the 
+        northeast area of the eastern continent. It is situated in the middle of grassland with an abundance of chocobos 
+        roaming the land nearby. The farm itself is relatively small, with a single ranch, an outside pen, and a house for 
+        the owner.</p>
       <img src = "../media/images/chococommunication.png">
       <a href = "#title" onClick="window.location.reload()"> <button > Back to map? </button> </a>
     </div>
 
     <div id = "goldInfo">
       <p class = "names"> GOLD SAUCER </p>
+      <p class = "startText"> Tired of fighting? Then head on over to the Gold Saucer where anything is possible! </p>
       <img src = "../media/images/gold_welcome.gif">
+      <p class = "infoText"> The Gold Saucer is located in the midst of a desert to the southeast of the planet's western continent. 
+        A towering amusement park built over the ruins of Old Corel, it is a world famous tourist attraction. 
+        The Gold Saucer is notable for being home to a number of minigames, particularly at the Battle Square and 
+        Chocobo Square. It is divided into seven attractions, which we'll leave it for you to explore and uses GP or Gold Points as its own currency, 
+        which can only be won from its minigames. <br><br> 
+        The Gold Saucer's attractions are situated entirely on discs held up by the structure itself. The discs appear to reach high above ground level, as clouds 
+        can be seen from the Saucer's exterior. Directly below it is Corel Prison, the remains of the old town of Corel.
+        The proximity of the Gold Saucer to <a class = "costaLink" href = "#costaInfo">Costa del Sol</a>, located to its northeast, leads many tourists landing at <a class = "costaLink" href = "#costaInfo"> Costa del Sol </a> to go onto visit the Gold Saucer.</p>
+      
       <a href = "#title" onClick="window.location.reload()"> <button > Back to map? </button> </a>
     </div>
 
@@ -58,6 +81,7 @@
     <div id= "iceInfo">
       <p class = "names"> ICICLE VILLAGE </p>
       <img src = "../media/images/ice.webp">
+      <img src = "../media/images/cloud_snowboarding.gif">
       <a href = "#title" onClick="window.location.reload()"> <button > Back to map? </button> </a>
     </div>
 
