@@ -102,7 +102,7 @@ function draw() {
     textFont(font);
     textSize(30);
     textAlign(CENTER, TOP);
-    text("PRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
+    text("AAAPRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
   pop();
   
   //midgar
