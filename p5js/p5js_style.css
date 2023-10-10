@@ -1,3 +1,13 @@
+@font-face{
+  font-family: FF7 textbox;
+  src: url("../media/font/Reactor7.ttf");
+}
+
+@font-face{
+  font-family: FF7 title;
+  src: url("../media/font/OPTIEngeEtienne.otf");
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,35 +19,122 @@ canvas {
   margin-left: auto;
   margin-right: auto;
 }
-
 h1{
+  display: block;
   text-align: center;
+  font-size: 69px;
+  color: white;
+}
+
+.names{
+  text-align: center;
+  font-family: FF7 title;
+  font-size: 100px;
 }
 
 a{
   color: white;
   font-size: 25px;
 }
-.title{
-  color: white;
+
+.infoText{
+  font-family: FF7 textbox;
+  font-size: 40px;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-image: linear-gradient(rgb(9, 15, 191), rgb(24, 8, 104));
+  border: rgb(224, 221, 221) ridge 8px;
+  border-radius: 10px;
 }
-.midgarInfo{
-  color: white;
-  background-image: url("../media/images/midgar_bg.jpg");
+audio{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
-.chocoboInfo{
+
+button{
+  font-family: FF7 textbox;
+  display: block;
+  margin-left: auto;
+  margin-right: 25px;
+  background-image: linear-gradient(rgb(9, 15, 191), rgb(24, 8, 104));
+  color: white;
+  font-size: 35px;
+  padding: 10px;
+  border: rgb(224, 221, 221) ridge 8px;
+  border-radius: 10px;
+}
+
+button:hover{
+  color: yellow;
+  
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+#midgarInfo{
+  padding-top: 30px;
+  color: white;
+  background: url("../media/images/midgar_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 25px;
+}
+#midgarInfo img{
+  width: 1000px;
+}
+
+#chocoboInfo{
+  padding-top: 10px;
   background-image: url("../media/images/chocobo_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 25px;
+  color: rgb(236, 209, 57);
 }
-.goldInfo{
-  color: white;
+#chocoboIngo img{
+  width: 2000px;
+}
+
+#goldInfo{
+  padding-top: 30px;
+  color: rgb(223, 157, 33);
   background-image: url("../media/images/gold_bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 25px;
 }
-.costaInfo{
+#goldInfo img{
+  width: 1500px;
+}
+#costaInfo{
+  color: rgb(2, 54, 122);
+  padding-top: 30px;
   background-image: url("../media/images/costa_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 25px;
 }
-.iceInfo{
+#iceInfo{
+  color: rgb(49, 57, 71);
+  padding-top: 30px;
   background-image: url("../media/images/icy_bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 25px;
 }
-.wutaiInfo{
+#wutaiInfo{
+  color: rgb(89, 5, 4);
+  padding-top: 30px;
   background-image: url("../media/images/wutai_bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 25px;
 }
