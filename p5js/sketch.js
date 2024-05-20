@@ -5,8 +5,8 @@ var mapY = 0;
 var mapSong;
 
 var spriteImage;
-var spriteX = mapX+1000;//900
-var spriteY= mapY+800;//400
+var spriteX;
+var spriteY;
 
 var midgarLink;
 var midgarSong;
@@ -80,47 +80,57 @@ function setup() {
   wutaiLink = createA('#wutaiInfo', '___________');
   wutaiLink.position(-1, -1);
 
-  windowWidth-=100;
-  windowHeight-=150;
-  canvasX = 0;
-  canvasY = 0;
-  canvasWidth = windowWidth;
+  canvasWidth = windowWidth*0.8;
   canvasHeight = windowHeight;
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(canvasWidth, canvasHeight);
+  canvasX = windowWidth*0.07;
+  canvasY = windowHeight*0.14;
+  spriteX = (canvasX+canvasWidth) / 2;
+  spriteY = (canvasY+canvasHeight) / 2;
  // canvas.mouseClicked(playMapSong());
   canvas.parent('sketch-holder');
   mapSong.play();
   
- 
+
 }
 
 function draw() {
   background(220);
   
-  image(mapImage, mapX, mapY, windowWidth, windowHeight);
+  
+  image(mapImage, mapX, mapY, canvasWidth, canvasHeight);
   push();
     textFont(font);
     textSize(30);
     textAlign(CENTER, TOP);
-    text("PRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
-  pop();
+    //text("PRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
+    text("Sprite (" + spriteX +  ", " + spriteY + ")", 0, 20, canvasWidth);  
+   
+    pop();
   
   //midgar
   push();
+  var rectX = canvasWidth*0.595;
+  var rectY = canvasHeight*0.45;
+  var rectWidth = canvasWidth*0.13;
+  var rectHeight = canvasHeight*0.1;
+
+  textFont(font);
+  textSize(30);
+  text("Window (" + windowWidth + ", " + windowHeight + ")", 0, 20, canvasWidth);
+  text("Mouse (" + mouseX + ", " + mouseY + ")", 0, 80, canvasWidth);
   
     noFill();
-    noStroke();
     
-    var rectX = canvasX+1080;
-    var rectY = canvasY+370;
-    var rectWidth = canvasWidth-1595;
-    var rectHeight = canvasHeight-625;
+  
     rect(rectX, rectY, rectWidth, rectHeight);
+   
     
-    if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
-      
+    
+    if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       midgarLink.show();
-      midgarLink.position(rectX+50, rectY+180);
+      midgarLink.position(rectX, rectY);
+      
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
@@ -135,6 +145,7 @@ function draw() {
       midgarSong.stop();
       midgarLink.hide();      
     }
+
     
 
   pop();
@@ -142,14 +153,14 @@ function draw() {
   //CHOCOBO
   push();
     noFill();
-    noStroke();
-   var rectX = canvasX+1450;
-   var rectY = canvasY+420;
-    var rectWidth = canvasWidth-1595;
-    var rectHeight = canvasHeight-620;
+    //noStroke();
+   var rectX = canvasWidth*0.79;
+   var rectY = canvasHeight*0.54;
+   var rectWidth = canvasWidth*0.13;
+   var rectHeight = canvasHeight*0.1;
     rect(rectX, rectY, rectWidth, rectHeight);
 
-    if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
+    if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       chocoboLink.show();
       chocoboLink.position(rectX+50, rectY+210);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
@@ -172,14 +183,14 @@ function draw() {
   push();
     noFill();
    
-    noStroke();
+    //noStroke();
 
-var rectX = canvasX+750;
-var rectY = canvasY+620;
- var rectWidth = canvasWidth-1595;
- var rectHeight = canvasHeight-620;
+var rectX = canvasWidth*0.38;
+var rectY = canvasHeight*0.61;
+var rectWidth = canvasWidth*0.13;
+var rectHeight = canvasHeight*0.1;
     rect(rectX, rectY, rectWidth, rectHeight);
-    if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
+    if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       goldLink.show();
       goldLink.position(rectX-5, rectY+50);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
@@ -199,14 +210,14 @@ var rectY = canvasY+620;
   //costa del sol
   push();
     noFill();
-  noStroke();
+ // noStroke();
  
-  var rectX = canvasX+750;
-  var rectY = canvasY+420;
-   var rectWidth = canvasWidth-1595;
-   var rectHeight = canvasHeight-620;
+  var rectX = canvasWidth*0.445;
+  var rectY = canvasHeight*0.485;
+  var rectWidth = canvasWidth*0.13;
+  var rectHeight = canvasHeight*0.1;
     rect(rectX, rectY, rectWidth, rectHeight);
-    if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
+    if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       costaLink.show();
       costaLink.position(rectX+120, rectY+158);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
@@ -226,14 +237,14 @@ var rectY = canvasY+620;
   //icicle village
   push();
     noFill();
-    noStroke();
+   // noStroke();
    
-    var rectX = canvasX+550;
-    var rectY = canvasY+220;
-     var rectWidth = canvasWidth-1595;
-     var rectHeight = canvasHeight-620;
+    var rectX = canvasWidth*0.325;
+    var rectY = canvasHeight*0.25;
+    var rectWidth = canvasWidth*0.13;
+    var rectHeight = canvasHeight*0.1;
     rect(rectX, rectY, rectWidth, rectHeight);
-    if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
+    if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       iceLink.show();
       iceLink.position(rectX+115, rectY+180);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
@@ -253,14 +264,14 @@ var rectY = canvasY+620;
   //wutai
   push();
     noFill();
-    noStroke();
+   // noStroke();
    
-    var rectX = canvasX+150;
-    var rectY = canvasY+300;
-     var rectWidth = canvasWidth-1595;
-     var rectHeight = canvasHeight-620;
+    var rectX = canvasWidth*0.08;
+    var rectY = canvasHeight*0.315;
+    var rectWidth = canvasWidth*0.13;
+    var rectHeight = canvasHeight*0.1;
     rect(rectX, rectY, rectWidth, rectHeight);
-    if(onRectangle(rectX, rectY, rectWidth, rectHeight) == false){
+    if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       wutaiLink.show();
       wutaiLink.position(rectX+80, rectY+138);
       if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
@@ -279,6 +290,7 @@ var rectY = canvasY+620;
   
   //sprite movement
   push(); 
+    
     spriteImage.position(spriteX+25, spriteY+25);
     spriteImage.size(30,45);
     if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
@@ -297,26 +309,17 @@ var rectY = canvasY+620;
     }
   pop();
   
- 
   
-
-  
-}
-
-function windowResized() {
-  windowWidth-=15;
-  windowHeight-=15;
-  canvas = resizeCanvas(windowWidth, windowHeight);
 }
   
 
 function onRectangle(rectX, rectY, rectWidth, rectHeight){
-  if(spriteX > rectX && spriteX < rectX+rectWidth && spriteY > rectY && spriteY < rectY+rectHeight){
-    return false;
+  if(spriteX-(canvasWidth*0.08) > rectX && spriteX-(canvasWidth*0.08) < rectX+rectWidth && spriteY-(canvasHeight*0.15)> rectY && spriteY-(canvasHeight*0.15) < rectY+rectHeight){
+    return true;
   }
   else{
    
-    return true;
+    return false;
   }
 }
 
