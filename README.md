@@ -5,9 +5,9 @@ The prompt was to create a retro-themed website based on popular media in the la
 on the game Final Fantasy VII and is designed to be a website to advertise and market the game. 
 
 Updates: 
-05-30-2024
-There were some issues with controlling the character in the map. The character is now controlled by mouse movement instead of keyboard. 
-Navigating the map is still being updated to function more consistently with changing screen resolutions. Every other function still
-works as expected and maybe more functions will be added soon. 
+05-30-2024:
+* There were some issues with controlling the character in the map. The character is now controlled by mouse movement instead of keyboard. 
+* Navigating the map is still being updated to function more consistently with changing screen resolutions.
+* Every other function still works as expected and maybe more functions will be added soon. 
 
 
