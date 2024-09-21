@@ -35,7 +35,6 @@ var canvasHeight;
 var canvasWidth;
 
 var clickCount = 1;
-var cursorImage;
 
 var font;
 
@@ -85,9 +84,6 @@ function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvasX = windowWidth*0.07;
   canvasY = windowHeight*0.14;
-  spriteX = (canvasX+canvasWidth) / 2;
-  spriteY = (canvasY+canvasHeight) / 2;
- // canvas.mouseClicked(playMapSong());
   canvas.parent('sketch-holder');
   mapSong.play();
   
@@ -104,7 +100,7 @@ function draw() {
     textSize(30);
     textAlign(CENTER, TOP);
     //text("PRESS W,A,S,or D TO NAVIGATE THE MAP. HOVER OVER A PLACE AND CLICK ON IT TO EXPLORE FURTHER. ", 0, 20, canvasWidth); 
-    text("Sprite (" + spriteX +  ", " + spriteY + ")", 0, 20, canvasWidth);  
+    text("Canvas (" + canvasX +  ", " + canvasY + ")", 0, 20, canvasWidth);  
    
     pop();
   
@@ -118,7 +114,7 @@ function draw() {
   textFont(font);
   textSize(30);
   text("Window (" + windowWidth + ", " + windowHeight + ")", 0, 20, canvasWidth);
-  text("Mouse (" + mouseX + ", " + mouseY + ")", 0, 80, canvasWidth);
+  text("Mouse (" + spriteX + ", " + mouseY + ")", 0, 80, canvasWidth);
   
     noFill();
     
@@ -130,14 +126,11 @@ function draw() {
     if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       midgarLink.show();
       midgarLink.position(rectX, rectY);
-      
-      if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
-        if(mouseIsPressed){
+      if(mouseIsPressed){
           clickSound.play();
           midgarSong.setLoop(false);
           midgarSong.play();
           mapSong.stop();
-        }
       }
     }
 
@@ -163,7 +156,7 @@ function draw() {
     if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       chocoboLink.show();
       chocoboLink.position(rectX+50, rectY+210);
-      if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
+      if(mouseX > 0 && mouseX < canvasWidth && mouseY > 0 && mouseY < canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
           chocoboSong.play();
@@ -193,13 +186,13 @@ var rectHeight = canvasHeight*0.1;
     if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       goldLink.show();
       goldLink.position(rectX-5, rectY+50);
-      if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
+     
         if(mouseIsPressed){
           clickSound.play();
           goldSong.play();
           mapSong.stop();
         }
-      }
+      
     }
     else{
       goldSong.stop();
@@ -220,13 +213,13 @@ var rectHeight = canvasHeight*0.1;
     if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       costaLink.show();
       costaLink.position(rectX+120, rectY+158);
-      if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
+      
         if(mouseIsPressed){
           clickSound.play();
           costaSong.play();
           mapSong.stop();
         }
-      }
+      
     }
     else{
       costaSong.stop();
@@ -247,13 +240,13 @@ var rectHeight = canvasHeight*0.1;
     if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       iceLink.show();
       iceLink.position(rectX+115, rectY+180);
-      if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
+      
         if(mouseIsPressed){
           clickSound.play();
           iceSong.play();
           mapSong.stop();
         }
-      }
+      
     }
     else{
       iceSong.stop();
@@ -274,13 +267,11 @@ var rectHeight = canvasHeight*0.1;
     if(onRectangle(rectX, rectY, rectWidth, rectHeight)){
       wutaiLink.show();
       wutaiLink.position(rectX+80, rectY+138);
-      if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
         if(mouseIsPressed){
           clickSound.play();
           wutaiSong.play();
           mapSong.stop();
         }
-      }
     }
     else{
       wutaiSong.stop();
@@ -290,22 +281,10 @@ var rectHeight = canvasHeight*0.1;
   
   //sprite movement
   push(); 
-    
-    spriteImage.position(spriteX+25, spriteY+25);
-    spriteImage.size(30,45);
-    if(mouseX > canvasX && mouseX < canvasX+canvasWidth && mouseY > canvasY && mouseY < canvasY+canvasHeight){
-      if(keyIsDown(87)){
-        spriteY-=7;
-      }
-      if(keyIsDown(83)){
-        spriteY+=7;
-      }
-      if(keyIsDown(68)){
-        spriteX+=7;
-      }
-      if(keyIsDown(65)){
-        spriteX-=7;
-      }
+    if(mouseX > 0 && mouseX < canvasWidth && mouseY > 0 && mouseY < canvasHeight){
+      noCursor();
+      spriteImage.size(windowWidth/49.83, windowHeight/20)
+      image(spriteImage, mouseX, mouseY);
     }
   pop();
   
@@ -314,7 +293,7 @@ var rectHeight = canvasHeight*0.1;
   
 
 function onRectangle(rectX, rectY, rectWidth, rectHeight){
-  if(spriteX-(canvasWidth*0.08) > rectX && spriteX-(canvasWidth*0.08) < rectX+rectWidth && spriteY-(canvasHeight*0.15)> rectY && spriteY-(canvasHeight*0.15) < rectY+rectHeight){
+  if(mouseX > rectX && mouseX < rectX+rectWidth && mouseY > rectY && mouseY < rectY+rectHeight){
     return true;
   }
   else{
