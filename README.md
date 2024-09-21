@@ -10,4 +10,7 @@ Updates:
 * Navigating the map is still being updated to function more consistently with changing screen resolutions.
 * Every other function still works as expected and maybe more functions will be added soon. 
 
+09-21-2024:
+* Added additional demo videos
+* Needs debugging on map navigation
 
